@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cambodia Map</title>
+        <meta name="viewport" content="initial-scale=1.0">
+        <meta charset="utf-8">
+        <style>
+            #map {
+                height: 100%;
+            }
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+        <script>
+            var map;
+            function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: {lat: 12.8797, lng: 121.7740},
+                    zoom: 6
+                });
+
+                //call marker function
+addMarker({lat:16.8358,lng:121.0017});
+addMarker({lat:6.2644,lng:125.6678});
+addMarker({lat:9.3591,lng:122.8211});
+addMarker({lat:14.4882,lng:121.3088});
+addMarker({lat:7.5125,lng:126.1763});
+addMarker({lat:13.8646,lng:120.6315});
+
+
+
+
+                //add marker function
+                function addMarker(coords){
+                    var marker = new google.maps.Marker({
+                        position:coords,
+                        map:map,
+                        icon:'predicted.png',
+                    });
+                }
+				
+            }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAstY-jk6RsPOv4fVOzFRGmeNyutwCu2R0
+        &callback=initMap" async defer></script>
+    </body>
+</html>
